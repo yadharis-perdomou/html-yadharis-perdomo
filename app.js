@@ -6,8 +6,6 @@ const cardAdj = [
   { name: "4", img: "imagenes/4.png" },
   { name: "5", img: "imagenes/5.png" },
   { name: "6", img: "imagenes/6.png" },
-  { name: "7", img: "imagenes/7.png" },
-  { name: "8", img: "imagenes/8.png" }
 ];
 
 const cuadricula = document.querySelector(".cuadricula");
@@ -22,7 +20,7 @@ function crearTablero() {
     // cuando i=cardAdj.length, es decir, 12.
     var carta = document.createElement("img"); // Crea elemento img cada vez que se ejecuta la función.
 
-    carta.setAttribute("src", "images/reverso.png"); //Asignar nuevo atributo a cada carta
+    carta.setAttribute("src", "imagenes/reverso.png"); //Asignar nuevo atributo a cada carta
     //igual a la imagen 'reverso'.
 
     carta.setAttribute("data-id", i); //Asignar como atributo a cada carta creada, el id=i.
@@ -38,3 +36,16 @@ function crearTablero() {
 function verificarPareja() {
   var cards = document.querySelector();
 }
+
+function voltearCarta () {
+  var cardId = this.getAttribute("data-id");
+  cartasEscogidas.push(cardAdj[cardId].name);
+  cartasEscogidasId.push(cardId);
+ this.setAttribute("src", cardAdj[cardId].img)
+  if (cartasEscogidas.length === 2) {
+    setTimeout(verificarPareja, 1000);
+  }
+}
+
+ crearTablero()
+});
